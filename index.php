@@ -29,36 +29,36 @@
 		<div class="collapse navbar-collapse"
 			id="bs-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="javascript:void(0)" id="toHome" onclick="loadInMain('home.php')">Home</a></li>
-				<li><a href="javascript:void(0)" id="toProjects" onclick="loadInMain('projects.php')">Projects</a></li>
-				<li><a href="javascript:void(0)" id="toRes93" onclick="loadInMain('res93.php')">Residence 9-3</a></li>
-				<li><a href="javascript:void(0)" id="toContact" onclick="loadInMain('contact.php')">Contact</a></li>
+			<li><a class="disabled">Tim Sonderen</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="javascript:void(0)" id="toHome" onclick="loadInMain('home.php')">Home</a></li>
+				<li><a href="javascript:void(0)" id="toProjects" onclick="loadInMain('projects.php')">Projecten</a></li>
+				<li><a href="javascript:void(0)" id="toRes93" onclick="loadInMain('res93.php')">Over mij</a></li>
+				<li><a href="javascript:void(0)" id="toContact" onclick="loadInMain('contact.php')">Contact</a></li>
+				<li><div class="divider-vertical"></div></li>
 				 <li class="dropdown">
                 <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle"><?php if(isset($_SESSION['uid'])){$fn=$_SESSION['firstName']; $sn=$_SESSION['scndName']; echo "$fn $sn";} else {echo "Account";}?><b class="caret"></b></a>
                 <ul class="dropdown-menu" style="background-color: transparent;">
 				
 				<?php if(isset($_SESSION['uid'])): ?>
-                    <li><input href="javascript:void(0)" onclick="loadInMain('profile.php')" class="btn btn-primary wide" value="Profile"></li>
-                    <li><input href="javascript:void(0)" onclick="load('/logout.php')" type="button"class="btn btn-default wide" value="Log out"></li>
+                    <li><input href="javascript:void(0)" onclick="loadInMain('profile.php')" class="btn btn-primary wide" value="Profiel"></li>
+                    <li><input href="javascript:void(0)" onclick="load('/logout.php')" type="button"class="btn btn-primary wide" value="Log uit"></li>
 				<?php else: ?>
 				<form method="post" action="login.php">
-					<li><input class="form-control" type="text" placeholder="Username" name="uname"></li>
-					<li><input class="form-control" type="password" placeholder="Password" name="pw"></li>
+					<li><input class="form-control" type="text" placeholder="Gebruikersnaam" name="uname"></li>
+					<li><input class="form-control" type="password" placeholder="Wachtwoord" name="pw"></li>
 					<li><input type="submit" class="btn btn-primary wide" value="Sign in"></li>
-					<li><input href="javascript:void(0)" onclick="loadInMain('signup.php')" class="btn btn-default wide" value="Sign up"></li>
+					<li><input href="javascript:void(0)" onclick="loadInMain('signup.php')" class="btn btn-primary wide" value="Sign up"></li>
 				</form>
 				<?php endif; ?>
                 </ul>
-            </li>
+				</li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
-	
-	<div id="popup"></div> <!-- div for popups -->
 	<div id="mainPage"></div> <!-- div where the actual page is displayed -->
 	
 </body>
